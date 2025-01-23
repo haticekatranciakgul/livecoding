@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios';
+import SingleUser from './SingleUser'
 
 
 function UserList() {
@@ -17,7 +18,13 @@ function UserList() {
     },[])
 
     return (
-        <div>
+        <div className="user-list">
+            <ul>
+                {users.map((user,idx) => (
+                    <li><SingleUser user={user} key={idx}/></li>
+                ))}
+               
+            </ul>
 
         </div>
     )
